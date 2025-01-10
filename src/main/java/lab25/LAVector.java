@@ -5,29 +5,29 @@ public class LAVector {
     private float[] components;
 
     public LAVector(int size) {
-        float[] vec = new float[size];
-        for (int i=0; i <= size; ++i) {
-            vec[i] = 0;
+        this.components = new float[size];
+        for (int i = 0; i < size; ++i) {
+            components[i] = 0;
         }
-
     }
 
     public LAVector(float[] components) {
         int size = components.length;
-        float[] vec = new float[size];
-        for (int i=0; i <= size; ++i) {
-            vec[i] = components[i];
+        this.components = new float[size];
+        for (int i = 0; i < size; ++i) {
+            this.components[i] = components[i];
         }
-        this.components = vec;
     }
 
     public LAVector(int size, float value) {
-        float[] vec = new float[size];
-        for (int i=0; i <= size; ++i) {
-            vec[i] = value;
+        this.components = new float[size];
+        for (int i = 0; i < size; ++i) {
+            components[i] = value;
         }
-        this.components = vec;
+    }
 
+    public float[] getComponents() {
+        return components;
     }
 
     public LAVector plusVector(LAVector other) {
@@ -35,28 +35,39 @@ public class LAVector {
         float[] summaVec = new float[size];
         float[] vec1 = this.components;
         float[] vec2 = other.components;
-        for (int i=0; i <= size; ++i) {
+        for (int i = 0; i < size; ++i) {
             summaVec[i] = vec1[i] + vec2[i];
         }
-
         return new LAVector(summaVec);
-
     }
 
     public LAVector multNumber(float number) {
-        return this;
+        float[] resultVec = new float[this.size()];
+        for (int i = 0; i < this.size(); ++i) {
+            resultVec[i] = components[i] * number;
+        }
+        return new LAVector(resultVec);
     }
 
     public float scalarMult(LAVector other) {
-        return 0;
+        float sum = 0;
+        for (int i = 0; i < size(); ++i) {
+            sum += components[i] * other.components[i];
+        }
+        return sum;
     }
 
     public float abs() {
-        return 0;
+        double sum = 0;
+        for (int i = 0; i < size(); ++i) {
+            sum += components[i] * components[i];
+        }
+        return (float) Math.sqrt(sum);
     }
 
     public float getComponent(int n) {
-        return 0;
+        if (n < 0 || n >= size()) return -1; // Исправлено условие
+        return components[n];
     }
 
     public int size() {
@@ -64,7 +75,10 @@ public class LAVector {
     }
 
     public String toString() {
-        return "";
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < size(); ++i) {
+            str.append(components[i]).append(" ");
+        }
+        return str.toString();
     }
-
 }
