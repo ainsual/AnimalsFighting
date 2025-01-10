@@ -57,5 +57,15 @@ public class MainTest {
         // Вычисление определителя
         float determinant = matrix1.det();
         System.out.println("Determinant: " + determinant);
+
+        // Умножения на вектор
+        Matrix matrix4 = new Matrix(new float[][] {
+                {1},
+                {2},
+                {3}
+        });
+        Matrix matrix5 = new Matrix(new float[][] {{1.0f, 2.0f, 3.0f}});
+        System.out.println("MultVec right: \n" + matrix4.multRVector(vector2));
+        System.out.println("MultVec left: \n" + matrix5.multLVector(vector2));
     }
 }

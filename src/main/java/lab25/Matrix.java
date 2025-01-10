@@ -60,10 +60,11 @@ public class Matrix {
         if (n == 1) {
             return mat[0][0];
         }
+        /*
         if (n == 2) {
             return mat[0][0] * mat[1][1] - mat[0][1] * mat[1][0];
         }
-
+         */
         float opred = 0;
         for (int col = 0; col < n; col++) {
             float[][] subMat = new float[n - 1][n - 1];
