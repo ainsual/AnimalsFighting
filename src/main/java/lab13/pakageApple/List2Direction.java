@@ -1,4 +1,4 @@
-package org.example.pakageApple;
+package lab13.pakageApple;
 
 public class List2Direction {
 

@@ -1,4 +1,4 @@
-package org.example.pakageNode;
+package lab13.pakageNode;
 
 public class Node {
     public int value;

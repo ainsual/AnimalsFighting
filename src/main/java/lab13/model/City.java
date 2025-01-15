@@ -1,4 +1,4 @@
-package org.example.model;
+package lab13.model;
 
 public class City {
     private String name;

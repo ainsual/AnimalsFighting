@@ -1,4 +1,4 @@
-package lad15;
+package lab15;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class MainBigText {
     public static void main(String[] args) throws FileNotFoundException {
 
-        // Определение паттернов
+        // патерны
         Pattern pattern1 = Pattern.compile("(Я|мне|моё)", Pattern.CASE_INSENSITIVE);
         Pattern pattern2 = Pattern.compile("(море|моря|морем|морю|морями|морях)", Pattern.CASE_INSENSITIVE);
         Pattern pattern3 = Pattern.compile("муза", Pattern.CASE_INSENSITIVE);
@@ -36,9 +36,8 @@ public class MainBigText {
 
         // Проход по каждому паттерну
         for (int i = 0; i < 8; ++i) {
-            Scanner scanner = new Scanner(new File(
-                    "C:\\Users\\karim\\IdeaProjects\\AnimalsFighting\\src\\main\\java\\lad15\\pushkin.txt "
-            ));
+            String pathToFile = "C:\\Users\\karim\\IdeaProjects\\AnimalsFighting\\src\\main\\java\\lab15\\pushkin.txt";
+            Scanner scanner = new Scanner(new File(pathToFile));
             int j = 0;
             int countRows = 1;
             while (scanner.hasNextLine() && j < 5) {
@@ -47,7 +46,7 @@ public class MainBigText {
                 while (matcher.find()) {
                     list[i][j] = countRows;
                     j++;
-                    if (j == 5) break; // Убедитесь, что j не превышает 4
+                    if (j == 5) break;
                 }
                 countRows++;
             }
@@ -57,7 +56,7 @@ public class MainBigText {
         // Вывод результатов
         for (int i = 0; i < 8; ++i) {
             System.out.print((i + 1) + ". ");
-            for (int j = 0; j < 5; ++j) { // Измените 8 на 5
+            for (int j = 0; j < 5; ++j) {
                 System.out.print(list[i][j] + " ");
             }
             System.out.println();

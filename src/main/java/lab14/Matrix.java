@@ -1,4 +1,4 @@
-package lab25;
+package lab14;
 
 public class Matrix {
     private float[][] components;

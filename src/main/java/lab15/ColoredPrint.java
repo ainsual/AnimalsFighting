@@ -1,4 +1,4 @@
-package lad15;
+package lab15;
 public class ColoredPrint {
 
     private static String RESET = "\u001B[0m";
