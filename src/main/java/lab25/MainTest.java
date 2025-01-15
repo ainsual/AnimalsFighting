@@ -38,15 +38,22 @@ public class MainTest {
         System.out.println("Matrix 1:");
         System.out.println(matrix1);
 
-        // Создание нулевой матрицы 3x3
+        // Создание нулевой матрицы 3x4
         Matrix matrix2 = new Matrix(3, 4);
         System.out.println("Matrix 2:");
         System.out.println(matrix2);
 
         // Создание диагональной матрицы
-        Matrix matrix3 = new Matrix(3, 5);
+        Matrix matrix3 = new Matrix(3, 5.f);
         System.out.println("Matrix 3: ");
         System.out.println(matrix3);
+
+        // Создание по матрицы по вектору
+
+        Matrix vecMatrix = new Matrix(
+               new LAVector[] {vector1, vector2, vector3}
+        );
+        System.out.println("Vec matrix:\n" +vecMatrix);
 
 
         // Транспонирование матрицы

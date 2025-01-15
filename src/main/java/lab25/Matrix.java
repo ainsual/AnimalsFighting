@@ -25,7 +25,7 @@ public class Matrix {
 
     // Конструктор для создания матрицы из нулей
     public Matrix(int rows, int columns) {
-        this.components = new float[rows][columns]; // Исправлено: порядок аргументов
+        this.components = new float[rows][columns];
         for (int i = 0; i < rows; ++i) {
             for (int j = 0; j < columns; ++j) {
                 components[i][j] = 0;
@@ -60,11 +60,6 @@ public class Matrix {
         if (n == 1) {
             return mat[0][0];
         }
-        /*
-        if (n == 2) {
-            return mat[0][0] * mat[1][1] - mat[0][1] * mat[1][0];
-        }
-         */
         float opred = 0;
         for (int col = 0; col < n; col++) {
             float[][] subMat = new float[n - 1][n - 1];

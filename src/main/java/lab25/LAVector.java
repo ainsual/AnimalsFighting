@@ -75,10 +75,10 @@ public class LAVector {
     }
 
     public String toString() {
-        StringBuilder str = new StringBuilder();
+        String str = "";
         for (int i = 0; i < size(); ++i) {
-            str.append(components[i]).append(" ");
+            str += components[i] + " ";
         }
-        return str.toString();
+        return str;
     }
 }
