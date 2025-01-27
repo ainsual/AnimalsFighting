@@ -5,22 +5,28 @@ import java.util.Random;
 class Main {
     public static void main(String[] args) {
         Node first = new Node(5);
-
         Random random = new Random();
+        // fill list
+        for (int i=0; i < 30; i++) {
+            add(first, random.nextInt(1, 42));
+        }
 
-        add(first, random.nextInt(100));
-        add(first, 12);
-        System.out.println(findLast(first).value);
-        add(first, 17);
-        add(first, 18);
-        System.out.println(findLast(first).value);
-        add(first, 19);
-        add(first, 20);
-        System.out.println(findLast(first).value);
-        add(first, 21);
+        // print first 17
+        Node varNode = first;
+        for (int i=0; i < 17; i++) {
+            System.out.print(varNode.value + " ");
+            varNode = varNode.next;
+        }
+        System.out.println();
 
-        System.out.println(findLast(first).value);
+        //print all
+        print(first);
+        System.out.println();
+        // print reverse
+        printReverse(first);
+
     }
+
 
     public static Node findLast(Node first) {
         Node current = first;
@@ -30,6 +36,7 @@ class Main {
         return current;
     }
 
+
     public static void add(Node first, int value) {
         Node last = findLast(first);
         Node newElement = new Node(value);
@@ -37,4 +44,18 @@ class Main {
         last.next = newElement;
     }
 
+
+    public static void printReverse(Node node) {
+        if (node == null){
+            return;
+        }
+        printReverse(node.next);
+        System.out.print(node.value + " ");
+    }
+
+    public static void print(Node node) {
+        System.out.print(node.value + " ");
+        printReverse(node.next);
+
+    }
 }
