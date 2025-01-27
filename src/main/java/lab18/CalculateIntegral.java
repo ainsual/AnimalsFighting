@@ -40,10 +40,10 @@ public class CalculateIntegral extends AbstractCalculateIntegral{
         double sum = 0;
         double h = (b - a) * 0.5 / N;
         for (int i = 0; i < N * 0.5; i++) {
+            // влево
             sum += h * function.calculate((b - a) * 0.5 - h*i);
-        }
-        for (int i = 0; i < N * 0.5; i++) {
-            sum += h * function.calculate((b - a) * 0.5 + h*i);
+            // вправо
+            sum += h * function.calculate( (b - a) * 0.5  + h*i);
         }
         return sum;
     }

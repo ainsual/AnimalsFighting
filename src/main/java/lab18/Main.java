@@ -7,7 +7,7 @@ public class Main {
                 new CalculateIntegral(0,5, new Sinus());
         System.out.println(calculateIntegral.get1());
 
-        //Second method
+        //Other methods
         System.out.println(calculateIntegral.get2());
         System.out.println(calculateIntegral.get3());
         System.out.println(calculateIntegral.get4());
